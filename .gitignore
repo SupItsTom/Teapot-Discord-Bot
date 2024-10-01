@@ -1,0 +1,5 @@
+.vscode
+.wrangler
+node_modules
+package*.json
+wrangler.toml

@@ -1,0 +1,88 @@
+{
+  "production": [
+    {
+      "name": "profile",
+      "description": "View and manage your Teapot Profile",
+      "type": 1,
+      "integration_types": [0,1],
+      "contexts": [0, 1, 2]
+    },
+    {
+      "name": "Profile",
+      "type": 2,
+      "integration_types": [0,1],
+      "contexts": [0, 1, 2]
+    },
+    {
+      "name": "settings",
+      "description": "Edit Settings",
+      "type": 1,
+      "options": [
+        {
+          "name": "name",
+          "description": "Select something to change",
+          "type": 3,
+          "required": true,
+          "choices": [
+            {
+              "name": "Allow anyone to view my profile",
+              "value": "privacy"
+            }
+          ]
+        },
+        {
+          "name": "value",
+          "description": "Enabled or disabled?",
+          "type": 5,
+          "required": true
+        }
+      ],
+      "integration_types": [0,1],
+      "contexts": [0, 1, 2]
+    },
+    {
+      "name": "quote",
+      "description": "Get random quote from Teapot's SkidDB",
+      "type": 1,
+      "integration_types": [0,1],
+      "contexts": [0, 1, 2]
+    },
+    {
+      "name": "about",
+      "description": "Check real-time service stats",
+      "type": 1,
+      "integration_types": [0,1],
+      "contexts": [0, 1, 2]
+    }
+  ],
+  "staging": [
+    {
+      "name": "privacy",
+      "description": "See and manage how your data is handled",
+      "type": 1,
+      "integration_types": [0,1],
+      "contexts": [0, 1, 2]
+    },
+    {
+      "name": "redeem",
+      "description": "Redeem a token",
+      "type": 1,
+      "options": [
+        {
+          "name": "token",
+          "description": "Teapot token",
+          "type": 3,
+          "required": true
+        }
+      ],
+      "integration_types": [0,1],
+      "contexts": [0, 1, 2]
+    },
+    {
+      "name": "Create Quote",
+      "type": 3,
+      "integration_types": [0,1],
+      "contexts": [0, 1, 2]
+    }
+  ]
+}

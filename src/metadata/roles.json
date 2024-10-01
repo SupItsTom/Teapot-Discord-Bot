@@ -1,0 +1,10 @@
+{
+    "roles": [
+        {
+            "key": "lifetime",
+            "name": "Lifetime",
+            "description": "Lifetime Client",
+            "type": 7
+        }
+    ]
+}
