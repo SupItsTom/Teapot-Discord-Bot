@@ -72,7 +72,7 @@ export class InteractionResponse {
     let _privacyNote = `-# Only you can see this because your account is set to private.`;
     let _privacyNotePublicTemp = ``;
 
-    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `\n-# \`Test Mode active for Teapot Bot. ✨Shoot for the stars!✨\`` : null;
+    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `Test Mode active for Teapot Bot - Shoot for the stars!` : null;
 
     // BUG: privacy note appears on targetted users too, giving the user incorrect information about their profile being private when checking a public one
 
@@ -81,9 +81,12 @@ export class InteractionResponse {
     return new JsonResponse({
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
-        content: _tpGetUserInfo.public == true ? _envBuildInformation : _privacyNote, _envBuildInformation,
+        content: null,
         embeds: [
           {
+            author: {
+              name: _envBuildInformation,
+            },
             description: `## ${_userWithBadges} ${_username}\n${_lastSeen}\n\n${_gamertag}\n${_consoleId}\n${_challenges}\n${_userSince}\n${_botUserSince}\n\n${_timeLeft}\n${_kvTime}`,
             color: EmbedColor.COLOR_DEFAULT,
             thumbnail: {
@@ -161,14 +164,17 @@ export class InteractionResponse {
       Your profile has been set to public. This means anyone on Discord can see your Teapot profile card.` : `
       Your profile has been set to private. This means nobody can see your profile,\nand when you run the </profile:1203990974896934934> command, it will only be visible to you.`}`
 
-    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `\n-# \`Test Mode active for Teapot Bot. ✨Shoot for the stars!✨\`` : null;
+    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `Test Mode active for Teapot Bot - Shoot for the stars!` : null;
 
     return new JsonResponse({
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
-        content: _envBuildInformation,
+        content: null,
         embeds: [
           {
+            author: {
+              name: _envBuildInformation,
+            },
             description: `## ${_userWithBadges} ${_username}\n${_lastSeen}\n## ${_userSettingsHeader}\n${_userSettingsPrivateProfile}`,
             color: EmbedColor.COLOR_DEFAULT,
             thumbnail: {
@@ -190,14 +196,17 @@ export class InteractionResponse {
     let _quoteCreationDate = `-# **Posted on <t:${quote.date}:D>**`;
     let _quoteText = `${quote.quote}`;
 
-    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `\n-# \`Test Mode active for Teapot Bot. ✨Shoot for the stars!✨\`` : null;
+    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `Test Mode active for Teapot Bot - Shoot for the stars!` : null;
 
     return new JsonResponse({
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
-        content: _envBuildInformation,
+        content: null,
         embeds: [
           {
+            author: {
+              name: _envBuildInformation,
+            },
             description: `## ${_quoteTitle}\n${_quoteCreationDate}\n\n>>> ${_quoteText}`,
             color: EmbedColor.COLOR_DEFAULT,
           }
@@ -219,14 +228,17 @@ export class InteractionResponse {
 
     const BetaSubText = `[<:BetaIconL:1280206493651828816><:BetaIconC:1280206502052888649><:BetaIconR:1280206510202556529>](https://supitstom.net/teapot/bot#badges)`
 
-    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `\n-# \`Test Mode active for Teapot Bot. ✨Shoot for the stars!✨\`` : null;
+    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `Test Mode active for Teapot Bot - Shoot for the stars!` : null;
 
     return new JsonResponse({
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
-        content: _envBuildInformation,
+        content: null,
         embeds: [
           {
+            author: {
+              name: _envBuildInformation,
+            },
             description: `## ${BetaSubText} ${_quoteTitle}\n${_quoteCreationDate}\n\n>>> ${_quoteText}`,
             color: EmbedColor.COLOR_DEFAULT,
           }
@@ -258,14 +270,17 @@ export class InteractionResponse {
     let _sxStatusFooTable = `\`\`\`\nMONITOR             | STATUS          \n--------------------+----------------\nInteraction Service | Operational\nAccount Service     | Operational\n\`\`\``;
     let _sxStatusFooter = `-# Teapot Bot runs on the SupItsTom Network • [See full status here](https://status.supitstom.net)`;
 
-    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `\n-# \`Test Mode active for Teapot Bot. ✨Shoot for the stars!✨\`` : null;
+    let _envBuildInformation = env.BUILD_TYPE == "staging" ? `Test Mode active for Teapot Bot - Shoot for the stars!` : null;
 
     return new JsonResponse({
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
-        content: _envBuildInformation,
+        content: null,
         embeds: [
           {// TODO: https://i.imgur.com/QoUeukY.png
+            author: {
+              name: _envBuildInformation,
+            },
             description: `## ${_title}\n${_lastUpdate}\n### ${_tpUsersTitle}\n${_tpUsersOnline} ${_tpUsersTotal}\n### ${_sxStatusTitle}\n${_sxStatusFooTable}\n${_sxStatusFooter}`,
             color: EmbedColor.COLOR_DEFAULT,
           }
