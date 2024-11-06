@@ -37,7 +37,6 @@ export async function isValidToken(token) {
 // ==========================================================
 // Database Stuff
 // ==========================================================
-// previously: setTeapotUser
 export async function tpSetUserInfo(env, user, email) {
     const result = env.database.prepare(`REPLACE INTO teapot_users (username, id, timestamp, email) VALUES (?1, ?2, ?3, ?4)`).bind(`${getDisplayName(user)}`, user.id, new Date().toISOString(), email).run();
     return result;
@@ -56,7 +55,6 @@ export async function tpGetUserInfo(env, user) {
     }
 }
 
-// previously: getTeapotEmail
 export async function tpGetUserEmail(env, email) {
     const stmt = env.database.prepare(`SELECT * FROM teapot_users WHERE email = ?1`).bind(email);
     const { results } = await stmt.all();

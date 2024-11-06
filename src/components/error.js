@@ -86,6 +86,33 @@ export class InteractionErrorResponse {
     })
   }
 
+  static DebugPrintConnectionData(request) {
+    return new JsonResponse({
+      type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+      data: {
+        content: null,
+        embeds: [
+          {
+            description: `## ConnectionDebugTool (geo)
+            Datacenter: ${request.cf.colo}
+            Country: ${request.cf.country}
+            City: ${request.cf.city}
+            Continent: ${request.cf.continent }
+            Region: ${request.cf.region}
+            Timezone: ${request.cf.timezone}`,
+            color: EmbedColor.COLOR_BLURPLE
+          },
+          {
+            description: `## ConnectionDebugTool (headers)
+            UserAgent: ${request.headers.get("user-agent")}`,
+            color: EmbedColor.COLOR_RED
+          }
+        ],
+        flags: InteractionResponseFlags.EPHEMERAL
+      },
+    })
+  }
+
   static TeapotConsoleBlacklisted(env) {
 
     let _userSettingsHeader = `<:BanHammer:1284978236039893012> Account Disabled`

@@ -74,8 +74,6 @@ export class InteractionResponse {
 
     let _envBuildInformation = env.BUILD_TYPE == "staging" ? `Test Mode active for Teapot Bot - Shoot for the stars!` : null;
 
-    // BUG: privacy note appears on targetted users too, giving the user incorrect information about their profile being private when checking a public one
-
     let _privacyFlag = `${_tpGetUserInfo.public == true ? 0 : 64}`;
 
     return new JsonResponse({
