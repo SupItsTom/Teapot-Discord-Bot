@@ -65,9 +65,9 @@ export class InteractionResponse {
     let _timeLeft = `**Time Left:** \`${teapot.acc.timeleft.lifetime == true ? `Lifetime` : `${teapot.acc.timeleft.current_day}d ${teapot.acc.timeleft.timeleft}\`\n- **Reserved:** \`${teapot.acc.timeleft.banked.days}d`}\``;
     let _kvTime = `**KV Life:** \`${teapot_kv.time == "" ? "None Set" : `${teapot_kv.time}`}\``;
 
-    let _botUserSince = `${_tpGetUserInfo.timestamp == null ? `` : `**Connected:** <t:${Math.floor(new Date(_tpGetUserInfo.timestamp) / 1000 )}:d>`}`;
+    let _botUserSince = `${_tpGetUserInfo.timestamp == null ? `` : `**Connected:** <t:${Math.floor(new Date(_tpGetUserInfo.timestamp) / 1000)}:d>`}`;
 
-    let _accountEmail = `${_tpGetUserInfo.public == true ? ``: `\n**Email:** \`${_tpGetUserInfo.email}\``}`;
+    let _accountEmail = `${_tpGetUserInfo.public == true ? `` : `\n**Email:** \`${_tpGetUserInfo.email}\``}`;
 
     let _privacyNote = `-# Only you can see this because your account is set to private.`;
     let _privacyNotePublicTemp = ``;

@@ -97,7 +97,7 @@ export class InteractionErrorResponse {
             Datacenter: ${request.cf.colo}
             Country: ${request.cf.country}
             City: ${request.cf.city}
-            Continent: ${request.cf.continent }
+            Continent: ${request.cf.continent}
             Region: ${request.cf.region}
             Timezone: ${request.cf.timezone}`,
             color: EmbedColor.COLOR_BLURPLE

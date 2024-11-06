@@ -34,7 +34,7 @@ export async function cmd_profile(interaction, env, context) {
     return InteractionResponse.TeapotProfileOnboarding(username);
   }
 
-  if(_tpGetUserInfo.blacklisted){
+  if (_tpGetUserInfo.blacklisted) {
     return InteractionErrorResponse.TeapotConsoleBlacklisted(env);
   }
 

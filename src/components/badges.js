@@ -14,7 +14,7 @@ export const ProfileCardBadges = {
 
 export function getProfileBadges(interaction, teapot) {
   const user = interaction.data.type == 2 ? getTargetUser(interaction) : getUser(interaction);
-  
+
   // shit hacky way to fix undefined users in badge metadata
   let isSystem = ``;
   let isDeveloper = ``;

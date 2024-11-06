@@ -17,7 +17,7 @@ import { JsonResponse } from "../utils/network";
 /******************************************************************/
 
 export async function cmd_privacy(interaction, env, context) {
-  
+
   return new JsonResponse({
     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
     data: {
@@ -53,5 +53,5 @@ export async function cmd_privacy(interaction, env, context) {
 /******************************************************************/
 
 export async function cmd_terms(interaction, env, context) {
-  
+
 }
